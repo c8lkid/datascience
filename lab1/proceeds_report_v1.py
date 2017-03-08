@@ -34,6 +34,6 @@ for line in tmp_stdin:
         result[line[1]] += int(line[2])
 
 # output result
-print('Project ID\tSumm')
+print('ProjectID\tSumm')
 for key, value in result.items():
     print('{0:>} {1:>11}'.format(key, value))
