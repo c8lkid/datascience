@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Context_data.txt | python proceeds_v1.py 2011-03-01 2018-03-04 | sort -k1,1 | python projects_v1.py Context_dict.txt
+# cat Context_data.txt | python proceeds_v1.py 2011-03-01 2018-03-04 | sort -k1,1 | python projects_v1.py Context_dict.txt
 
 import sys
 from datetime import datetime
@@ -24,5 +24,5 @@ for line in sys.stdin:
         d = datetime.strptime(d, '%d.%m.%Y')
     except ValueError:
         continue
-    if date_from_obj < d < date_to_obj:
+    if date_from_obj <= d <= date_to_obj:
         print('{0:<7} {1:>7}'.format(project, proceeds))
